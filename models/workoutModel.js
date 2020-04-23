@@ -5,38 +5,40 @@ const workoutPlanSchema = new Schema({
     type: {
         type: String,
         trim: true, 
-        required: "Enter type of workout"
+        required: [true, "Enter type of workout"]
     }, 
     name: {
         type: String,
         trim: true,
-        required: "Enter "
+        required: "Enter name of workout"
     },
     weight: {
         type: Number,
         trim: true,
-        required:
+        required: "Enter weight"
     },
     sets: {
         type: Number,
         trim: true,
-        required:
+        required: "Enter number of sets"
     },
     reps: {
         type: Number,
         trim: true,
-        required:
+        required: "Enter number of reps"
     }, 
     distance: {
         type: Number,
         trim: true,
-        required:
+        required: "Enter distance"
     },
     duration: {
         type: Number,
         trim: true,
-        required:
+        required: "Enter workout duration"
     },
 })
 
+const Workout = mongoose.model("Workout", workoutPlanSchema);
+module.exports = Workout;
 // type name weight sets reps
